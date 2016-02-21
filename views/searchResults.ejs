@@ -1,0 +1,14 @@
+<% if (shows.length > 0) { %>
+	<% shows.forEach(function(show) { %>
+		<h2> Upcoming <%= show.artists[0].name %> Shows: </h2>
+		<div class="well">
+			<p>Venue: <%= show.venue.name %></p>
+			<p>Date: <%= show.datetime %></p>
+			<p>
+		</div>
+	<% }); %>
+<% } else { %>
+<h3>Sorry, there are no local <%= q %> shows anytime soon. Check back later!
+<% } %>
+<div class="home"><a href="/">&larr;Home</a></div>
+</div>

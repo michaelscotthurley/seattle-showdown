@@ -1,0 +1,30 @@
+{
+  "name": "seattle-showdown",
+  "version": "1.0.0",
+  "description": "WDI Project #2 - A social concert web application for the Seattle area.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelscotthurley/seattle-showdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelscotthurley/seattle-showdown/issues"
+  },
+  "homepage": "https://github.com/michaelscotthurley/seattle-showdown#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-ejs-layouts": "^2.0.0",
+    "foreman": "^1.4.1",
+    "pg": "^4.4.6",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.69.0",
+    "sequelize": "^3.19.3"
+  }
+}
