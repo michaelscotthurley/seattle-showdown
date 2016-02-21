@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
 
 app.get('/results', function(req, res) {
 	var query = req.query.q
-	request('http://api.bandsintown.com/events/search.json?artists[]='+query+'&location=Seattle,WA&app_id=seattle-showdown',
+	request('http://api.bandsintown.com/artists/'+query+'/events/search.json?api_version=2.0&app_id=seattle-showdown&location=Seattle,WA',
 		function (error, response, body) {
 			var data = JSON.parse(body);
 			if (!error && response.statusCode == 200) {

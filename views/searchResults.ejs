@@ -1,10 +1,13 @@
-<% if (shows.length > 0) { %>
+<% if (shows.length != false) { %>
+	<h2>Upcoming <%= q %> Shows:</h2>
 	<% shows.forEach(function(show) { %>
-		<h2> Upcoming <%= show.artists[0].name %> Shows: </h2>
 		<div class="well">
+			<img src = "<%= show.artists[0].thumb_url %>">
+			<h3>Title: <%= show.title %> </h3>
 			<p>Venue: <%= show.venue.name %></p>
-			<p>Date: <%= show.datetime %></p>
-			<p>
+			<p>Date: <%= show.formatted_datetime %></p>
+			<p>Ticket Status: <%= show.ticket_status %></p>
+			<a href="#" class="btn btn-warning">I'll Be There!</a>
 		</div>
 	<% }); %>
 <% } else { %>
