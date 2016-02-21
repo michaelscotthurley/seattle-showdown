@@ -3,6 +3,10 @@ var db = require('./models');
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
+var ejsLayouts = require("express-ejs-layouts");
+var request = require("request");
+var shows = require('./controllers/shows');
+app.use("/shows", shows);
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/static'));
@@ -10,7 +14,6 @@ app.use(express.static(__dirname + '/static'));
 var ejsLayouts = require("express-ejs-layouts");
 app.use(ejsLayouts);
 
-var request = require("request");
 
 app.get("/", function (req, res) {
 	res.render('index');
@@ -28,6 +31,5 @@ app.get('/results', function(req, res) {
       		}
 		});
 });
-
 
 app.listen(3000)

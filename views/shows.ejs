@@ -1,0 +1,11 @@
+<h1>Shows People are Going To:</h1>
+
+<% allshows.forEach(function(show) { %>
+	<div class="well">
+			<img src = "<%= show.image %>">
+			<h3>Artist: <%= show.artist %></h3>
+			<p>Title: <%= show.title %> </p>
+			<p>Venue: <%= show.venue %></p>
+			<p>Date: <%= show.date %></p>
+	</div>
+<% }); %>
