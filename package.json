@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/michaelscotthurley/seattle-showdown#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-ejs-layouts": "^2.0.0",
+    "express-session": "^1.13.0",
     "foreman": "^1.4.1",
     "pg": "^4.4.6",
     "pg-hstore": "^2.3.2",

@@ -1,11 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var db = require('../models');
-var ejsLayouts = require("express-ejs-layouts");
 var bodyParser = require('body-parser');
-
 router.use(bodyParser.urlencoded({extended: false}));
-router.use(ejsLayouts);
+
 
 router.get("/", function(req, res) {
 	db.show.findAll().then(function(allshows) {
@@ -21,8 +19,7 @@ router.post('/', function(req, res) {
 		title:  req.body.addTitle,
 		venue:  req.body.addVenue,
 		date:   req.body.addDate,
-		image:  req.body.addImage,
-		userId: req.body.addUserId,
+		image:  req.body.addImage
 	  }
 	}).spread(function(show, created) {
 		res.redirect("/shows");

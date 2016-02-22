@@ -1,11 +1,15 @@
 <h1>Seattle Showdown
-<small>Your lowdown on concerts in the Seattle area</small></h1>
+<small>The lowdown on concerts in the Seattle area</small></h1>
 
-<div class="form-group">
+<center><a href="/auth/signup" class="btn btn-warning">Signup</a>
+<a href="/auth/login" class="btn btn-success">Login</a>
+<a href="/auth/logout" class="btn btn-danger">Logout</a></center><br>
+	<div class="form-group">
 		<form action="/results" method="GET">
 			<p class ="lead">Who do you wanna see?</p>
 			<input type="text" name="q" placeholder="ex: Lower Dens" size="40">
 			<button type="submit" class="btn btn-success">Search</button>
 		</form>
 	</div>
-</div>
+<br>
+<a href="/shows" class="btn btn-primary">Popular Shows</a>

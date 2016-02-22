@@ -10,9 +10,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+<% if (typeof alerts !== 'undefined') { %>
+    <% for (key in alerts) { %>
+      <% alerts[key].forEach(function(thisMsg) { %>
+        <div class="alert alert-<%= key %>"><%= thisMsg %></div>
+      <% }); %>
+    <% } %>
+<% } %>
 <div class="container">
-
-<%- body %>
-
+<div>Current User: <%= currentUser.name %></div>
+      <%- body %>
+</div>
 </body>
 </html>
