@@ -33,3 +33,7 @@ header {
 .nav-wrapper {
 	font-family: 'Black Ops One';
 }
+
+#artist-search {
+	text-align: center;
+}

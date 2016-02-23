@@ -1,7 +1,7 @@
 <% if (shows.length != false) { %>
 	<h2>Upcoming <%= q %> Shows:</h2>
 	<% shows.forEach(function(show) { %>
-		<div class="well">
+		<div class="row">
 			<img src = "<%= show.artists[0].thumb_url %>">
 			<h3>Title: <%= show.title %> </h3>
 			<p>Venue: <%= show.venue.name %></p>
