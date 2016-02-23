@@ -17,8 +17,6 @@ app.use(session({
 	saveUninitialized: true
 }))
 app.use(flash());
-app.use('/shows', require('./controllers/shows'));
-
 
 app.use(function(req, res, next) {
   if (req.session.userId) {
@@ -51,6 +49,7 @@ app.get('/results', function(req, res) {
 		});
 });
 
+app.use('/shows', require('./controllers/shows'));
 app.use('/auth', require('./controllers/auth'));
 
 app.listen(3000)

@@ -1,0 +1,14 @@
+<h1>Shows You're Attending</h1>
+
+<% user.shows.forEach(function(show) { %>
+	<div class="well">
+			<img src = "<%= show.image %>">
+			<h3>Artist: <%= show.artist %></h3>
+			<p>Title: <%= show.title %> </p>
+			<p>Venue: <%= show.venue %></p>
+			<p>Date: <%= show.date %></p>
+		<a href="/shows/<%= show.id %>" class='btn btn-danger delete-show'>I'm Out</a>
+	</div>
+<% }); %>
+
+<script type="text/javascript" src="/js/script.js"></script>

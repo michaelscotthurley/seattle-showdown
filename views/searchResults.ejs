@@ -7,7 +7,7 @@
 			<p>Venue: <%= show.venue.name %></p>
 			<p>Date: <%= show.formatted_datetime %></p>
 			<p>Ticket Status: <%= show.ticket_status %></p>
-			<form action="/shows" method="POST">
+			<form action="/shows/<%= currentUser.id %>" method="POST">
 			<input type="hidden" name="addArtist" value="<%= show.artists[0].name %>" />
 			<input type="hidden" name="addTitle" value="<%= show.title %>" />
 			<input type="hidden" name="addVenue" value="<%= show.venue.name %>" />
