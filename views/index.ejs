@@ -1,19 +1,21 @@
-<center><img class="responsive-img" src="/img/header.png" width="82%"/></center>
+<header>
+	<img class="responsive-img" id="header-img" src="/img/header.png" />
+	<h2 id="title">Seattle Showdown</h2>
+	<h3 id="slogan">The lowdown on concerts in the Seattle area</h3>
+</header>
 
-<h1>Seattle Showdown
-<small>The lowdown on concerts in the Seattle area</small></h1>
+<div class="container">
+	<p class="flow-text">
+		Welcome to Seattle Showdown! This app allows you to stay on top of the latest concerts in and around Seattle. RSVP to shows, arrange ride shares and share your reviews. Sound like your kinda thing? Then let's get you (rocking) and rolling!</p>
 
-<center><a href="/auth/signup" class="btn btn-warning">Signup</a>
-<a href="/auth/login" class="btn btn-success">Login</a>
-<a href="/auth/logout" class="btn btn-danger">Logout</a></center><br>
+	<p class ="flow-text">First, please <a href="/auth/signup">signup for an account</a> (it'll be painless I promise). Already a member? Just <a href="/auth/login">sign in here</a>.</p>
+
 	<div class="form-group">
 		<form action="/results" method="GET">
-			<p class ="lead">Who do you wanna see?</p>
-			<input type="text" name="q" placeholder="ex: Lower Dens" size="40">
-			<button type="submit" class="btn btn-success">Search</button>
+			<p>Who do you wanna see?</p>
+			<input type="text" name="q" placeholder="ex: Lower Dens" size="20">
+			<button type="submit" class="btn">Search</button>
 		</form>
 	</div>
-<br>
-<a href="/shows" class="btn btn-primary">Popular Shows</a>
+</div>
 
-<a href="/shows/<%= currentUser.id %>" class="btn btn-primary">Your Shows</a>

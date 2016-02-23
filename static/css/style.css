@@ -1,0 +1,35 @@
+#header-img {
+	display: block;
+	margin: 0 auto;
+	width: 75%;
+}
+
+header {
+	text-align: center;
+}
+
+#title { 
+   position: absolute; 
+   top: 160px; 
+   left: 0; 
+   width: 100%;
+   color: white;
+   text-shadow: 5px 5px 8px #388e3c;
+   font-size: 80px;
+   font-family: 'Bangers'; 
+}
+
+#slogan { 
+   position: absolute; 
+   top: 250px; 
+   left: 0; 
+   width: 100%;
+   color: white;
+   text-shadow: 4px 4px 8px #388e3c;
+   font-size: 40px;
+   font-family: 'Bangers';  
+}
+
+.nav-wrapper {
+	font-family: 'Black Ops One';
+}

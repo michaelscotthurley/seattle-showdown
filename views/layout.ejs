@@ -3,7 +3,9 @@
 <head>
 	<title>Seattle Showdown</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<!-- Compiled and minified CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Bangers|Black+Ops+One' rel='stylesheet' type='text/css'>
+  <!-- Compiled and minified CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
@@ -18,18 +20,18 @@
     <% } %>
 <% } %>
 <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper #78909c blue-grey lighten-1">
       <a href="/" class="brand-logo">Seattle Showdown</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/shows/<%= currentUser.id %>">Shows</a></li>
         <li><a href="/rides">Ride Shares</a></li>
         <li><a href="/reviews">Reviews</a></li>
-        <li><a href="/reviews">Login</a></li>
+        <li><a href="/auth/login">Login</a></li>
       </ul>
     </div>
   </nav>
-  
-      <%- body %>
 
+      <%- body %>
+      
 </body>
 </html>

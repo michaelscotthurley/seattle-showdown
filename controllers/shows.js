@@ -37,7 +37,7 @@ router.post('/:id', function(req, res) {
 		}
 	}).spread(function(show, created) {
 		post.addShow(show).then(function() {
-			res.render('yourShows');
+			res.redirect('/shows/:id');
 		})
 	 })
   });
