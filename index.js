@@ -56,4 +56,4 @@ app.get('/results', function(req, res) {
 app.use('/shows', require('./controllers/shows'));
 app.use('/auth', require('./controllers/auth'));
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
