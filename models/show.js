@@ -6,11 +6,16 @@ module.exports = function(sequelize, DataTypes) {
     venue: DataTypes.STRING,
     date: DataTypes.STRING,
     image: DataTypes.STRING,
+    ticketOnSale: DataTypes.STRING,
+    ticketType: DataTypes.STRING,
+    ticketStatus: DataTypes.STRING,
+    ticketBuyLink: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
         models.show.belongsToMany(models.user, {through: "usersShows"})
+        models.show.hasMany(models.review)
       }
     }
   });

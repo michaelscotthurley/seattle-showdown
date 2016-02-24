@@ -36,6 +36,10 @@ app.get("/", function (req, res) {
 	res.render('index', {alerts: req.flash()});
 })
 
+app.get("/search", function (req, res) {
+  res.render('search');
+});
+
 app.get('/results', function(req, res) {
 	var query = req.query.q
 	request('http://api.bandsintown.com/artists/'+query+'/events/search.json?api_version=2.0&app_id=seattle-showdown&location=Seattle,WA',

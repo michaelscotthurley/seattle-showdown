@@ -10,6 +10,16 @@ router.get("/", function(req, res) {
 	});
 });
 
+//route to get all reviews for all shows
+router.get('/reviews', function(req, res) {
+	db.review.findAll({
+		include: db.show
+	})
+	.then(function(reviews) {
+		res.render('reviews', {reviews:reviews})
+	});
+});
+
 //route to get current user's shows
 router.get('/:id', function(req, res) {
 	var id = req.session.userId;
@@ -33,7 +43,11 @@ router.post('/:id', function(req, res) {
 			title:  req.body.addTitle,
 			venue:  req.body.addVenue,
 			date:   req.body.addDate,
-			image:  req.body.addImage
+			image:  req.body.addImage,
+			ticketOnSale: req.body.addOnSaleDate,
+			ticketType: req.body.addTicketType,
+			ticketStatus: req.body.addTicketStatus,
+			ticketBuyLink: req.body.addTicketUrl
 		}
 	}).spread(function(show, created) {
 		post.addShow(show).then(function() {
@@ -43,6 +57,7 @@ router.post('/:id', function(req, res) {
   });
 });
 
+//route to delete a concert from a user's list
 router.delete('/:id', function(req, res) {
 	db.user.findOne({
 		where: {

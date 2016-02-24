@@ -1,5 +1,10 @@
+body {
+   background-color : #e0e0e0; 
+}
+
 #header-img {
 	display: block;
+   position: static;
 	margin: 0 auto;
 	width: 75%;
 }

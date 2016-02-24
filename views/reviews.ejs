@@ -1,0 +1,14 @@
+<h4>Show Reviews</h4>
+
+<% reviews.forEach(function(review) { %>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<%= review.title %>
+				<%= review.body %>
+				<%= review.show.title %>
+			</div>
+		</div>
+	</div>
+
+<% }); %>

@@ -23,6 +23,18 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
+      ticketOnSale: {
+        type: Sequelize.STRING
+      },
+      ticketType: {
+        type: Sequelize.STRING
+      },
+      ticketStatus: {
+        type: Sequelize.STRING
+      },
+      ticketBuyLink: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

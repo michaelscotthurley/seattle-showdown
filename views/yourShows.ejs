@@ -1,17 +1,21 @@
-<h1>Shows You're Attending</h1>
+<h3>Your Shows</h3>
 
 <% user.shows.forEach(function(show) { %>
 <div class="container">	
 	<div class="row">
-		<div class="col s6">
+		<div class="col s4">
 			<img src = "<%= show.image %>">
 		</div>
-		<div class="col s6">
+		<div class="col s8">
 			<h5><%= show.artist %></h5>
 			<p>Show: <%= show.title %> </p>
 			<p>Venue: <%= show.venue %></p>
 			<p>Date: <%= show.date %></p>
 			<a href="/shows/<%= show.id %>" class='btn delete-show'>I'm Out</a>
+			<a href="/reviews/<% show.id %>" class='btn'>Write Review</a>
+			<a href="/rides/<% show.id %>" class='btn'>Offer to Drive</a>
+			<br>
+			<br>
 		</div>
 	</div>
 </div>

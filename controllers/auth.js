@@ -47,7 +47,8 @@ router.post('/login', function(req, res) {
       res.redirect('/auth/login');
     } else if (user) {
       req.session.userId = user.id;
-      req.flash('success', 'You are logged in!');
+      req.session.userName = user.name;
+      req.flash('success', 'Welcome back to Seattle Showdown, ' + req.session.userName +'!');
       res.redirect('/');
     } else {
       req.flash('danger', 'Email and/or password invalid');
