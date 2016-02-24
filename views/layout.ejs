@@ -24,11 +24,18 @@
       <a href="/" class="brand-logo">Seattle Showdown</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/search">Search</a></li>
-        <li><a href="/shows/<%= currentUser.id %>">Your Shows</a></li>
+        <li><a href="/shows">Popular Shows</a></li>
+        <% if (currentUser)  { %>
+          <li><a href="/shows/<%= currentUser.id %>">Your Shows</a></li>
+        <% } %>
         <li><a href="/rides">Ride Shares</a></li>
-        <li><a href="/reviews">Reviews</a></li>
-        <li><a href="/auth/signup">Signup</a></li>
-        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/shows/reviews">Reviews</a></li>
+        <% if (!currentUser)  { %>
+          <li><a href="/auth/signup">Signup</a></li>
+        <% } %>
+        <% if (!currentUser)  { %>
+          <li><a href="/auth/login">Login</a></li>
+        <% } %>
         <% if (currentUser)  { %>
           <li><a href="/auth/logout">Logout</a></li>
         <% } %>

@@ -9,8 +9,8 @@ $(document).ready(function() {
     }).done(function(data) {
       console.log(data);
       if (data === 'success') {
-        row.fadeOut(1000, function() {
-          row.remove();
+        row.parent().fadeOut(1000, function() {
+          row.parent().remove();
         });
       }
     })

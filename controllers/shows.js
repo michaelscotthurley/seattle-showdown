@@ -5,15 +5,20 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: false}));
 
 router.get("/", function(req, res) {
-	db.show.findAll().then(function(allshows) {
-		res.render('shows', {allshows:allshows});
+	db.show.findAll({include: [db.user]}).then(function(allshows) {
+		console.log(allshows[0].users.length);
+		var filteredShows = allshows.filter(function(show) {
+			return show.users.length > 0
+		})
+		//var sorted = filteredShows.sort
+		res.render('shows', {allshows:filteredShows});
 	});
 });
 
 //route to get all reviews for all shows
 router.get('/reviews', function(req, res) {
 	db.review.findAll({
-		include: db.show
+		include: [db.show,db.user]
 	})
 	.then(function(reviews) {
 		res.render('reviews', {reviews:reviews})
