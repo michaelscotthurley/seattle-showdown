@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
   $('.delete-show').click(function(e) {
     e.preventDefault();
     var url = $(this).attr('href');
@@ -14,5 +15,29 @@ $(document).ready(function() {
         });
       }
     })
+  });
+
+  $(".button-collapse").sideNav();
+
+  $('#differentForm').formValidation({
+    framework: 'materialize',
+    fields: {
+        password: {
+            validators: {
+                identical: {
+                    field: 'confirmPassword',
+                    message: 'The password and its confirm are not the same'
+                }
+            }
+        },
+        confirmPassword: {
+            validators: {
+                identical: {
+                    field: 'password',
+                    message: 'The password and its confirm are not the same'
+                }
+            }
+        }
+    }
   });
 });

@@ -42,3 +42,11 @@ header {
 #artist-search {
 	text-align: center;
 }
+
+h4 {
+   text-align: center;
+}
+
+.searchform {
+   margin-top: 10em;
+}

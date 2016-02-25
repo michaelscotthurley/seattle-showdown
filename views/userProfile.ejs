@@ -1,0 +1,23 @@
+<h4>Your Showdown Profile</h4>
+
+<h5><%= profile.name %></h5>
+<p class="text-flow"><%= profile.email %></p>
+
+
+<h5>Shows You're Attending:</h5>
+<% profile.shows.forEach(function(show) { %>
+	<p class="text-flow"><%= show.title %></p>
+<% }); %>
+
+
+<h5>Reviews You've Written:</h5>
+<% profile.reviews.forEach(function(review) { %>
+	<% profile.shows.forEach(function(show) { %>
+		<% if (review.showId == show.showId) { %>
+			<p class="text-flow"><%= show.title %><p>
+		<% } %>
+	<% }); %>
+	<p class="text-flow"><%= review.title %><p>
+	<p><%= review.body %></p>
+<% }); %>
+

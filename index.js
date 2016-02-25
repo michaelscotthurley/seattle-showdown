@@ -40,6 +40,7 @@ app.get("/search", function (req, res) {
   res.render('search');
 });
 
+//get route for artist search results
 app.get('/results', function(req, res) {
 	var query = req.query.q
 	request('http://api.bandsintown.com/artists/'+query+'/events/search.json?api_version=2.0&app_id=seattle-showdown&location=Seattle,WA',
@@ -54,6 +55,12 @@ app.get('/results', function(req, res) {
 });
 
 app.use('/shows', require('./controllers/shows'));
+app.use('/users', require('./controllers/users'));
 app.use('/auth', require('./controllers/auth'));
+
+//404 file not found route
+app.get('/*', function(req, res) {
+  res.render('error');
+});
 
 app.listen(process.env.PORT || 3000)

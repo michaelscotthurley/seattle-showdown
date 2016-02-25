@@ -28,6 +28,9 @@
         <% if (currentUser)  { %>
           <li><a href="/shows/<%= currentUser.id %>">Your Shows</a></li>
         <% } %>
+        <% if (currentUser) { %>
+          <li><a href="/users/<% currentUser.id %>">Your Profile</a></li>
+        <% } %>
         <li><a href="/rides">Ride Shares</a></li>
         <li><a href="/shows/reviews">Reviews</a></li>
         <% if (!currentUser)  { %>
@@ -44,6 +47,6 @@
   </nav>
 
       <%- body %>
-      
+<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
