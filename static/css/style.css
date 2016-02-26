@@ -50,3 +50,13 @@ h4 {
 .searchform {
    margin-top: 10em;
 }
+
+.noshows {
+   margin-top: 10em;
+   text-align: center;
+}
+
+.sold-out {
+   font-size: 18px;
+   font-weight: bold;
+}

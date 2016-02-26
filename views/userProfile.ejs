@@ -12,11 +12,8 @@
 
 <h5>Reviews You've Written:</h5>
 <% profile.reviews.forEach(function(review) { %>
-	<% profile.shows.forEach(function(show) { %>
-		<% if (review.showId == show.showId) { %>
-			<p class="text-flow"><%= show.title %><p>
-		<% } %>
-	<% }); %>
+	<%= review.show.title %>
+
 	<p class="text-flow"><%= review.title %><p>
 	<p><%= review.body %></p>
 <% }); %>

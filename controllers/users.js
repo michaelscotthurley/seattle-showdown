@@ -9,7 +9,7 @@ router.get("/", function(req, res) {
 		where: { 
 			id: req.session.userId
 		},
-		include: [db.show,db.review]
+		include: [db.show,{model: db.review, include: db.show}]
 	}).then(function(profile) {
 		res.render('userProfile', {profile:profile})
 	});
@@ -21,7 +21,7 @@ router.get("/:id", function(req, res) {
 		where: {
 			id: id
 		},
-		include: [db.show,db.review]
+		include: [db.show,{model: db.review, include: db.show}]
 	}).then(function(profile) {
 		res.render('userProfile', {profile:profile})
 	})

@@ -110,7 +110,7 @@ router.delete('/:id', function(req, res) {
 					id: req.params.id
 				}
 			}).then(function(show) {
-				user.removeShow(show)
+				user.removeShow(show);
 					res.send("success");
 			});	
 	});		
