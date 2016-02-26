@@ -17,14 +17,14 @@ Technologies Used:
 * AJAX
 
 User Stories:
-* Q: I'm a live music fan in Seattle, how do I find shows?
-* A Our site uses the Bandsintown API to allow users to search for shows in the Seattle area.
+* 1Q: I'm a live music fan in Seattle, how do I find shows?
+* 1A Our site uses the Bandsintown API to allow users to search for shows in the Seattle area.
 
-* Q: I'm a lonely transplant, how can I meet people to go to shows with?
-* A: Our site has social components like reviews and ride shares that allow users to connect.
+* 2Q: I'm a lonely transplant, how can I meet people to go to shows with?
+* 2A: Our site has social components like reviews and ride shares that allow users to connect.
 
-* Q: I don't have a car and I'm not on a great bus route, UBER is expensive, how do I get to shows?
-* A: Our site offers ride shares so that users can find rides from concert-goers in their neighborhood.
+* 3Q: I don't have a car and I'm not on a great bus route, UBER is expensive, how do I get to shows?
+* 3A: Our site offers ride shares so that users can find rides from concert-goers in their neighborhood.
 
-* Q: I'm a busy professional, how can I keep track of the shows I want to go to?
-* A: Our RSVP feature stores each show that the user wishes or plans to attend. From this page there is also a link to buy tickets.
+* 4Q: I'm a busy professional, how can I keep track of the shows I want to go to?
+* 4A: Our RSVP feature stores each show that the user wishes or plans to attend. From this page there is also a link to buy tickets.
