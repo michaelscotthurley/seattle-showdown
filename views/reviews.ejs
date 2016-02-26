@@ -1,13 +1,13 @@
 <h4>Reviews</h4>
 
-<% reviews.forEach(function(review) { %>
 <div class="container">
+<% reviews.forEach(function(review) { %>
 	<div class="row">
-		<div class="col s12">
-			<p class="text-flow"><%= review.title %></p>
-			<p class="text-flow">By: <a href="/users/<%= review.user.id %>"><%= review.user.name %></a></p>
-			<p><%= review.body %></p>
-		</div>
-	</div> 
-</div>
+        <div class="col s8 offset-s2 review blue-grey darken-1">
+            <h5><%= review.title %></h5>
+              <p><strong>By: <a href="/users/<%= review.user.id %>"><%= review.user.name %></a></strong></p>
+              <p><%= review.body %></p>
+            </div>
+          </div>
 <% }); %>
+</div>

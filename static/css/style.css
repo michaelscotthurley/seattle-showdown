@@ -47,6 +47,11 @@ header {
 	text-align: center;
 }
 
+.front-search {
+   margin-top: 3em;
+   border: groove;
+}
+
 h4 {
    text-align: center;
 }
@@ -63,4 +68,17 @@ h4 {
 .sold-out {
    font-size: 18px;
    font-weight: bold;
+}
+
+#popular {
+   text-align: center;
+}
+
+.review {
+   color: white;
+   border-radius: 25px;
+}
+
+.review a {
+   color: #ffb300;
 }
