@@ -4,13 +4,13 @@
 <p class="text-flow"><%= profile.email %></p>
 
 
-<h5>Shows You're Attending:</h5>
+<h5>Shows:</h5>
 <% profile.shows.forEach(function(show) { %>
 	<p class="text-flow"><%= show.title %></p>
 <% }); %>
 
 
-<h5>Reviews You've Written:</h5>
+<h5>Reviews:</h5>
 <% profile.reviews.forEach(function(review) { %>
 	<%= review.show.title %>
 

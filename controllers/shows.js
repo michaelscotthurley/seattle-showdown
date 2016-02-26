@@ -4,6 +4,7 @@ var db = require('../models');
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: false}));
 
+//route to get all shows to which any user has RSVP'd
 router.get("/", function(req, res) {
 	db.show.findAll({include: [db.user]}).then(function(allshows) {
 		console.log(allshows[0].users.length);

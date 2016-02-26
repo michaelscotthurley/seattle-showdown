@@ -22,27 +22,3 @@ $(document).ready(function() {
     edge: 'left',
     closeOnClick: true
   });
-
-
-  $('#differentForm').formValidation({
-    framework: 'materialize',
-    fields: {
-        password: {
-            validators: {
-                identical: {
-                    field: 'confirmPassword',
-                    message: 'The password and its confirm are not the same'
-                }
-            }
-        },
-        confirmPassword: {
-            validators: {
-                identical: {
-                    field: 'password',
-                    message: 'The password and its confirm are not the same'
-                }
-            }
-        }
-    }
-  });
-});
