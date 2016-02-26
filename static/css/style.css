@@ -1,3 +1,7 @@
+@media all and (max-width: 900px) {
+  .overlay { display: none; }
+}
+
 body {
    background-color : #e0e0e0; 
 }
