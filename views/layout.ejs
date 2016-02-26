@@ -33,7 +33,7 @@
         <% if (currentUser) { %>
           <li><a href="/users/<% currentUser.id %>">Your Profile</a></li>
         <% } %>
-        <li><a href="/rides">Ride Shares</a></li>
+        <li><a href="/shows/rides">Ride Shares</a></li>
         <li><a href="/shows/reviews">Reviews</a></li>
         <% if (!currentUser)  { %>
           <li><a href="/auth/signup">Signup</a></li>
@@ -54,7 +54,7 @@
         <% if (currentUser) { %>
           <li><a href="/users/<% currentUser.id %>">Your Profile</a></li>
         <% } %>
-        <li><a href="/rides">Ride Shares</a></li>
+        <li><a href="/shows/rides">Ride Shares</a></li>
         <li><a href="/shows/reviews">Reviews</a></li>
         <% if (!currentUser)  { %>
           <li><a href="/auth/signup">Signup</a></li>

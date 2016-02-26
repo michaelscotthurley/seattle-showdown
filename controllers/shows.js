@@ -82,7 +82,7 @@ router.get('/rides/:id', function(req, res) {
 		},
 		include: [db.show,db.user]
 	})
-	.then(function(reviews) {
+	.then(function(rides) {
 		res.render('rides', {rides:rides})
 	});
 });
@@ -102,8 +102,9 @@ router.post('/makerideshare/:id', function(req, res) {
 			showId: req.params.id
 		}, 
 		defaults: {
-			title: req.body.reviewTitle,
-			body: req.body.reviewBody
+			neighborhood: req.body.neighborhood,
+			passengers: req.body.passengers,
+			description: req.body.rideShareDesc
 		}
 	}).spread(function(review, created) {
 			res.redirect('/shows/rides'); 

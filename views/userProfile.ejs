@@ -2,8 +2,7 @@
 
 <div class="container">
 
-<center><a href="mailto:<%= profile.email %>"<p class="text-flow"><%= profile.email %></p></a></center>
-
+<center><a href="mailto:<%= profile.email %>"<p class="flow-text"><%= profile.email %></p></a></center>
 
 <center><h5>Shows:</h5>
 <% profile.shows.forEach(function(show) { %>
@@ -19,6 +18,17 @@
 		<p class="flow-text"><a href="../shows/reviews/<%=review.showId%>"> <%= review.show.title %></a></p>
 		<p><%= review.title %></p>
 		<p><%= review.body %></p>
+	</div>
+</div>
+<% }); %>
+
+<center><h5>Ride Shares:</h5></center>
+<% profile.rides.forEach(function(ride) { %>
+<div class="row">
+	<div class="col s8 offset-s2 review blue-grey darken-1">
+		<p class="flow-text"><a href="../shows/rides/<%= ride.showId%>"> <%= ride.show.title %></a></p>
+		<p>Room for: <%= ride.passengers %></p>
+		<p><%= ride.description %></p>
 	</div>
 </div>
 <% }); %>
