@@ -7,7 +7,7 @@
 
 <center><h5>Shows:</h5>
 <% profile.shows.forEach(function(show) { %>
-	<strong><p class="text-flow"><%= show.title %></p></strong>
+	<strong><p class="flow-text"><%= show.title %></p></strong>
 <% }); %>
 </center>
 
@@ -16,7 +16,7 @@
 <% profile.reviews.forEach(function(review) { %>
 <div class="row">
 	<div class="col s8 offset-s2 review blue-grey darken-1">
-		<p class="text-flow"><a href="../shows/reviews/<%=review.showId%>"> <%= review.show.title %></a></p>
+		<p class="flow-text"><a href="../shows/reviews/<%=review.showId%>"> <%= review.show.title %></a></p>
 		<p><%= review.title %></p>
 		<p><%= review.body %></p>
 	</div>
