@@ -63,6 +63,53 @@ router.post('/writereview/:id', function(req, res) {
 	})
 })
 
+//route to get all ride shares for all shows
+router.get('/rides', function(req, res) {
+	db.ride.findAll({
+		include: [db.show,db.user]
+	})
+	.then(function(allrides) {
+		res.render('allrides', {allrides:allrides})
+	});
+});
+
+//route to get ride shares for a particular show
+router.get('/rides/:id', function(req, res) {
+	var id = req.params.id;
+	db.ride.findAll({
+		where: {
+			showId: id
+		},
+		include: [db.show,db.user]
+	})
+	.then(function(reviews) {
+		res.render('rides', {rides:rides})
+	});
+});
+
+//route to form to create a ride share for a show
+router.get('/makerideshare/:id', function(req, res) {
+	var id = req.params.id;
+	res.render('makeRideShare');
+		
+});
+
+//route to post a new ride share for a show
+router.post('/makerideshare/:id', function(req, res) {
+	db.ride.findOrCreate({
+		where: {
+			userId: req.session.userId,
+			showId: req.params.id
+		}, 
+		defaults: {
+			title: req.body.reviewTitle,
+			body: req.body.reviewBody
+		}
+	}).spread(function(review, created) {
+			res.redirect('/shows/rides'); 
+	})
+})
+
 //route to get current user's shows
 router.get('/:id', function(req, res) {
 	var id = req.session.userId;

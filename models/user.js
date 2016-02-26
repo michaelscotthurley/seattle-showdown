@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
         models.user.belongsToMany(models.show, {through: "usersShows"});
         models.user.hasMany(models.review);
+        models.user.hasMany(models.ride);
       },
 authenticate: function(email, password, callback) {
         this.find( {

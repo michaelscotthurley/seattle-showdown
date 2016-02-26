@@ -4,7 +4,7 @@
 <% if (!currentUser) { %>
 	<p class="flow-text"> Remember to 
 	<a href="/auth/signup" class="btn">SIGNUP</a>  OR  <a href="auth/login" class="btn">LOGIN</a>
-	To RSVP to shows!</p>
+	to RSVP to shows!</p>
 <% } %>
 </div>
 
@@ -19,13 +19,14 @@
 				<p>Title: <%= show.title %> </p>
 				<p>Venue: <%= show.venue %></p>
 				<p>Date: <%= show.date %></p>
+				<p>Number of Showdowners RSVP'd: <strong><%= show.users.length %></strong></p>
 				<% if (show.ticketType !== "Sold Out") { %>
 					<p>Ticket Status: <%= show.ticketStatus %></p>
 				<% } %>
 				<% if (show.ticketType == "Sold Out") { %>
 					<p class="sold-out red-text">TICKETS ARE SOLD OUT FOR THIS SHOW</p>
 				<% } else { %>
-					<p><strong><a href="<%= show.ticketURL %>">Buy Your Tickets!</a></strong></p>
+					<p><strong><a href="<%= show.ticketBuyLink %>">Buy Your Tickets!</a></strong></p>
 				<% } %>
 				<form action="/shows/<%= currentUser.id %>" method="POST">
 				<input type="hidden" name="addArtist" value="<%= show.artist %>" />

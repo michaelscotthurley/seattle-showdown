@@ -16,6 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
         models.show.belongsToMany(models.user, {through: "usersShows"})
         models.show.hasMany(models.review)
+        models.show.hasMany(models.ride)
       }
     }
   });
