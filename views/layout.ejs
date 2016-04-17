@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>Seattle Showdown</title>
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Bangers|Black+Ops+One' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
   <!-- Compiled and minified CSS -->
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
 <% if (typeof alerts !== 'undefined') { %>
@@ -21,7 +22,7 @@
     <% } %>
 <% } %>
 <nav>
-    <div class="nav-wrapper #78909c blue-grey lighten-1">
+    <div class="nav-wrapper">
     <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       <a href="/" class="brand-logo">Seattle Showdown</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -33,8 +34,8 @@
         <% if (currentUser) { %>
           <li><a href="/users/<% currentUser.id %>">Your Profile</a></li>
         <% } %>
-        <li><a href="/shows/rides">Ride Shares</a></li>
-        <li><a href="/shows/reviews">Reviews</a></li>
+        <li><a href="/rides">Ride Shares</a></li>
+        <li><a href="/reviews">Reviews</a></li>
         <% if (!currentUser)  { %>
           <li><a href="/auth/signup">Signup</a></li>
         <% } %>
@@ -68,8 +69,7 @@
       </ul>
     </div>
   </nav>
-
+<br>
       <%- body %>
-<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

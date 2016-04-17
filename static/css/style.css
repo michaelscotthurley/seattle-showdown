@@ -1,4 +1,4 @@
-@media all and (max-width: 900px) {
+@media all and (max-width: 750px) {
   .overlay { display: none; }
 }
 
@@ -6,11 +6,14 @@ body {
    background-color : #e0e0e0; 
 }
 
-#header-img {
+h4 {
+   text-align: center;
+}
+
+.header-img {
 	display: block;
    position: static;
 	margin: 0 auto;
-	width: 75%;
 }
 
 header {
@@ -41,6 +44,19 @@ header {
 
 .nav-wrapper {
 	font-family: 'Black Ops One';
+   background-color: #78909c;
+}
+
+.brand-logo {
+   margin-left: 10px;
+}
+
+.btn {
+   background-color: #78909c;
+}
+
+.btn:hover {
+   background-color: #627884;
 }
 
 #artist-search {
@@ -52,17 +68,16 @@ header {
    border: groove;
 }
 
-h4 {
-   text-align: center;
-}
-
 .searchform {
    margin-top: 10em;
 }
 
 .noshows {
-   margin-top: 10em;
-   text-align: center;
+   margin-top: 1em;
+   text-align: left;
+   background: rgb(84, 110, 122);
+   color: white;
+   border-radius: 3px;
 }
 
 .sold-out {
@@ -76,7 +91,8 @@ h4 {
 
 .review {
    color: white;
-   border-radius: 25px;
+   border-radius: 3px;
+   background: rgb(84, 110, 122);
 }
 
 .review a {

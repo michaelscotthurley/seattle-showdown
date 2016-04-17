@@ -13,8 +13,8 @@
 			<p>Venue: <%= show.venue %></p>
 			<p>Date: <%= show.date %></p>
 			<a href="/shows/<%= show.id %>" class='btn delete-show'>I'm Out</a>
-			<a href="writereview/<%= show.id %>" class='btn'>Write Review</a>
-			<a href="makerideshare/<%= show.id %>" class='btn'>Offer to Drive</a>
+			<a href="../reviews/writereview/<%= show.id %>" class='btn'>Write Review</a>
+			<a href="../rides/makerideshare/<%= show.id %>" class='btn'>Offer to Drive</a>
 			<br>
 			<br>
 		</div>

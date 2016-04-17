@@ -42,19 +42,21 @@ app.get("/search", function (req, res) {
 
 //get route for artist search results
 app.get('/results', function(req, res) {
-	var query = req.query.q
+  var query = req.query.q.toUpperCase();
 	request('http://api.bandsintown.com/artists/'+query+'/events/search.json?api_version=2.0&app_id=seattle-showdown&location=Seattle,WA',
 		function (error, response, body) {
 			var data = JSON.parse(body);
 			if (!error && response.statusCode == 200) {
       		res.render('searchResults', {shows: data, q: query});
       		} else {
-        	res.send("Error!")
+        	res.send('Sorry, something went wrong. Please check the spelling of the arist you searched for and try again.');
       		}
 		});
 });
 
 app.use('/shows', require('./controllers/shows'));
+app.use('/reviews', require('./controllers/reviews'));
+app.use('/rides', require('./controllers/rides'));
 app.use('/users', require('./controllers/users'));
 app.use('/auth', require('./controllers/auth'));
 

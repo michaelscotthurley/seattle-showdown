@@ -1,5 +1,5 @@
 <% if (shows.length != false) { %>
-	<h4>Upcoming <%= q %> Shows:</h4>
+	<h4>UPCOMING <%= q %> SHOWS:</h4>
 	
 	<div class="container">
 	<% shows.forEach(function(show) { %>
@@ -30,7 +30,7 @@
 				<input type="hidden" name="addTicketStatus" value="<%= show.ticket_status %>" />
 				<input type="hidden" name="addTicketUrl" value="<%= show.ticket_url %>" />
 				<% if (currentUser) { %>
-					<button type="submit" class="btn btn-warning">I'm There!</button>
+					<button type="submit" class="btn">I'm There!</button>
 					<a href="/search" class="btn">New Search</a>
 				<% } %>
 				</form>
@@ -38,16 +38,22 @@
 					<p class="flow-text">
 					<a href="/auth/signup" class="btn">SIGNUP</a>  OR  
 					<a href="auth/login" class="btn">LOGIN</a><br>
-					To RSVP to shows!</p>
+					To RSVP to shows!<br>
+					<a href="/search" class="btn">NEW SEARCH</a></p>
 				<% } %>
 			</div>
 		</div>
 	<% }); %>
 <% } else { %>
-<div class="row">
-	<div class="col s6 offset-s3 noshows">
-		<h5>Sorry, there are no local <strong><%= q %></strong> shows anytime soon. Maybe you should check out <a href="shows/" class="btn">POPULAR SHOWS</a> for some other ideas...</h5>
+<div class="container">
+	<div class="row">
+			<img src="../img/horns.jpg" class="header-img"/>
+		</div>
 	</div>
-</div>
+	<div class="row">
+		<div class="col s8 offset-s2 noshows">
+			<h5>Sorry, there are no local <strong><%= q %></strong> shows anytime soon. Please start a <a href="/search">NEW SEARCH</a>, or maybe you could check out <a href="shows/">POPULAR SHOWS</a> for some ideas.</h5>
+		</div>
+	</div>
 <% } %>
 </div>

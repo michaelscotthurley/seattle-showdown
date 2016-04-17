@@ -3,8 +3,8 @@
 <% allreviews.forEach(function(review) { %>
 	<div class="container">
 		<div class="row">
-			<div class="col s8 offset-s2 review blue-grey darken-1">
-				<h5><a href="/shows/reviews/<%= review.showId %>"><%= review.show.title %></a></h5>
+			<div class="col s9 offset-s1 review">
+				<h5><a href="/reviews/<%= review.showId %>"><%= review.show.title %></a></h5>
 				<h6>By: <a href="/users/<%= review.user.id %>"><%= review.user.name %></a></h6>
 			</div>
 		</div>
