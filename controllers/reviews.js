@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
     include: [db.show,db.user]
   })
   .then(function(allreviews) {
-    res.render('allreviews', {allreviews:allreviews})
+    res.render('reviews/allreviews', {allreviews:allreviews})
   });
 });
 
@@ -22,17 +22,21 @@ router.get('/:id', function(req, res) {
     include: [db.show,db.user]
   })
   .then(function(reviews) {
-    res.render('reviews', {reviews:reviews})
+    res.render('reviews/showReviews', {reviews:reviews})
   });
 });
 
 //route to form to write a review of a show
 router.get('/writereview/:id', function(req, res) {
   var id = req.params.id;
-  res.render('writeReview');
-    
+  db.show.findAll({
+    where: {id: id}
+  })
+  .then(function(shows) {
+    res.render('reviews/writeReview', {shows:shows})
+  });
 });
-
+    
 //route to post a new review for a show
 router.post('/writereview/:id', function(req, res) {
   db.review.findOrCreate({
@@ -45,7 +49,7 @@ router.post('/writereview/:id', function(req, res) {
       body: req.body.reviewBody
     }
   }).spread(function(review, created) {
-      res.redirect('/shows/reviews'); 
+      res.redirect('/reviews'); 
   })
 })
 

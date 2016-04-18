@@ -1,9 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var db = require('../models');
-var bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended: false}));
 
+//route to get logged in user's profile
 router.get("/", function(req, res) {
 	db.user.findOne({
 		where: { 
@@ -11,10 +10,11 @@ router.get("/", function(req, res) {
 		},
 		include: [db.show,{model: db.review, include: db.show},{model: db.ride, include: db.show}]
 	}).then(function(profile) {
-		res.render('userProfile', {profile:profile})
+		res.render('users/userProfile', {profile:profile})
 	});
 });
 
+//route to get another user's profile
 router.get("/:id", function(req, res) {
 	var id = req.params.id
 	db.user.findOne({
@@ -23,7 +23,7 @@ router.get("/:id", function(req, res) {
 		},
 		include: [db.show,{model: db.review, include: db.show},{model: db.ride, include: db.show}]
 	}).then(function(profile) {
-		res.render('userProfile', {profile:profile})
+		res.render('users/userProfile', {profile:profile})
 	})
 })
 

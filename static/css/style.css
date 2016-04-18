@@ -3,11 +3,10 @@
 }
 
 body {
-   background-color : #e0e0e0; 
-}
-
-h4 {
-   text-align: center;
+   background-color : #e0e0e0;
+/*   display: flex;
+   min-height: 100vh;
+   flex-direction: column;*/ 
 }
 
 .header-img {
@@ -19,6 +18,19 @@ h4 {
 header {
 	text-align: center;
 }
+
+/*.footer-copyright {
+   background-color: #78909c;
+   height: 50px;
+   text-align: center;
+   padding-top: .2em;
+}
+
+.footer-copyright p {
+   color: white;
+   font-size: 1em;
+   font-weight: bold;
+}*/
 
 #title { 
    position: absolute; 
@@ -42,6 +54,20 @@ header {
    font-family: 'Bangers';  
 }
 
+.heading {
+   font-size: 50px;
+   font-family: 'Bangers';
+   color: #627884;
+   text-align: center;
+}
+
+.profile-heading {
+   font-size: 40px;
+   font-family: 'Bangers';
+   color: #627884;
+   text-align: center;
+}
+
 .nav-wrapper {
 	font-family: 'Black Ops One';
    background-color: #78909c;
@@ -59,7 +85,7 @@ header {
    background-color: #627884;
 }
 
-#artist-search {
+.artist-search {
 	text-align: center;
 }
 
@@ -69,7 +95,7 @@ header {
 }
 
 .searchform {
-   margin-top: 10em;
+   margin-top: 3em;
 }
 
 .noshows {
@@ -89,12 +115,26 @@ header {
    text-align: center;
 }
 
-.review {
+.infoBox {
    color: white;
    border-radius: 3px;
    background: rgb(84, 110, 122);
 }
 
-.review a {
+.infoBox a {
    color: #ffb300;
+}
+
+.infoBox a:hover {
+   color: white;
+}
+
+.solo-link {
+   color: #ffb300;
+   text-align: center;
+}
+
+.solo-link:hover {
+   color: #78909c;
+   text-align: center;
 }

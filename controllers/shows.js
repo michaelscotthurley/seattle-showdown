@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
 			return show.users.length > 0
 		})
 		//var sorted = filteredShows.sort
-		res.render('shows', {allshows:filteredShows});
+		res.render('shows/allshows', {allshows:filteredShows});
 	});
 });
 
@@ -23,7 +23,7 @@ router.get('/:id', function(req, res) {
 		},
 		include: [db.show]
 	}).then(function(user) {
-		res.render('yourShows', {user:user});
+		res.render('shows/yourShows', {user:user});
 	});
 });
 

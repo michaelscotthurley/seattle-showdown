@@ -1,0 +1,48 @@
+<h4 class="heading">Popular Shows</h4>
+
+<div id="popular">
+<% if (!currentUser) { %>
+  <p class="flow-text"> Remember to 
+  <a href="/auth/signup" class="btn">SIGNUP</a>  OR  <a href="auth/login" class="btn">LOGIN</a>
+  to RSVP to shows!</p>
+<% } %>
+</div>
+
+<% allshows.forEach(function(show) { %>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        <img src = "<%= show.image %>">
+      </div>
+      <div class="col s6">
+        <h5><%= show.artist %></h5>
+        <p>Title: <%= show.title %> </p>
+        <p>Venue: <%= show.venue %></p>
+        <p>Date: <%= show.date %></p>
+        <p>Number of Showdowners RSVP'd: <strong><%= show.users.length %></strong></p>
+        <% if (show.ticketType !== "Sold Out") { %>
+          <p>Ticket Status: <%= show.ticketStatus %></p>
+        <% } %>
+        <% if (show.ticketType == "Sold Out") { %>
+          <p class="sold-out red-text">TICKETS ARE SOLD OUT FOR THIS SHOW</p>
+        <% } else { %>
+          <p><strong><a href="<%= show.ticketBuyLink %>">Buy Your Tickets!</a></strong></p>
+        <% } %>
+        <form action="/shows/<%= currentUser.id %>" method="POST">
+        <input type="hidden" name="addArtist" value="<%= show.artist %>" />
+        <input type="hidden" name="addTitle" value="<%= show.title %>" />
+        <input type="hidden" name="addVenue" value="<%= show.venue %>" />
+        <input type="hidden" name="addDate" value="<%= show.date %>" />
+        <input type="hidden" name="addImage" value="<%= show.image %>" />
+        <input type="hidden" name="addOnSaleDate" value="<%= show.ticketOnSale %>" />
+        <input type="hidden" name="addTicketType" value="<%= show.ticketType %>" />
+        <input type="hidden" name="addTicketStatus" value="<%= show.ticketStatus %>" />
+        <input type="hidden" name="addTicketUrl" value="<%= show.ticketBuyLink %>" />
+        <% if (currentUser) { %>
+          <button type="submit" class="btn btn-warning">I'm There!</button>
+        <% } %>
+        </form>
+      </div>
+    </div>
+  </div>
+<% }); %>

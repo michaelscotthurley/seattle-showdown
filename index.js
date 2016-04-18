@@ -37,7 +37,7 @@ app.get("/", function (req, res) {
 })
 
 app.get("/search", function (req, res) {
-  res.render('search');
+  res.render('shows/search');
 });
 
 //get route for artist search results
@@ -47,7 +47,7 @@ app.get('/results', function(req, res) {
 		function (error, response, body) {
 			var data = JSON.parse(body);
 			if (!error && response.statusCode == 200) {
-      		res.render('searchResults', {shows: data, q: query});
+      		res.render('shows/searchResults', {shows: data, q: query});
       		} else {
         	res.send('Sorry, something went wrong. Please check the spelling of the arist you searched for and try again.');
       		}

@@ -1,0 +1,27 @@
+<h4 class="heading">Set up a Ride Share</h4>
+<div class="container">
+<p class="flow-text">Seattle Showdown wants everyone to get to and from their shows safely. If you volunteer to drive other people to a concert (or if you are driving anywhere for any reason), please be responsible and never drink and drive!</p>
+
+
+    <form method="POST" role="form" id="newrideshare">
+      <div class="row">
+        <div class="input-field col s8">
+            <input type="text" class="form-control" name="neighborhood" placeholder="ex: Magnolia" >
+            <label for="neighborhood">Your Neighborhood</label>
+          </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s8">
+            <input type="number" class="form-control" name="passengers" placeholder="ex: 2" >
+            <label for="passengers">No. of Passengers You Can Accomodate</label>
+          </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s8">
+            <textarea name="rideShareDesc" form="newrideshare" id="ridesharebody" style="width: 400px; height: 200px;" placeholder="Ex: I have a white Ford Bronco that can fit up to three other people. I'll be heading downtown to the Paramount from Ballard around 8. Not too interested in the opening act. Happy to pick up and drop off peeps in the Ballard/Queen Anne/Magnolia area. Holla if you want a ride."></textarea>
+            <label for="review">Give us some details about your plans.</label>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary">POST RIDE SHARE</button><br><br>
+  </form>
+</div>

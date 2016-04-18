@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
     include: [db.show,db.user]
   })
   .then(function(allrides) {
-    res.render('allrides', {allrides:allrides})
+    res.render('rides/allrides', {allrides:allrides})
   });
 });
 
@@ -22,14 +22,14 @@ router.get('/:id', function(req, res) {
     include: [db.show,db.user]
   })
   .then(function(rides) {
-    res.render('showRides', {rides:rides})
+    res.render('rides/showRides', {rides:rides})
   });
 });
 
-// //route to form to create a ride share for a show
+//route to form to create a ride share for a show
 router.get('/makerideshare/:id', function(req, res) {
  var id = req.params.id;
- res.render('makeRideShare');
+ res.render('rides/makeRideShare');
 });
 
 //route to post a new ride share for a show

@@ -1,0 +1,42 @@
+<h4 class="heading"><%= profile.name %></h4>
+
+<div class="container">
+
+<div class="row">
+  <div class="col s8 offset-s2 infoBox">
+    <p class="flow-text center">Contact Info:<br><a href="mailto:<%= profile.email %>" class="solo-link"><%= profile.email %></p></a>
+  </div>
+</div>
+
+<h5 class="profile-heading">RSVP's</h5>
+<% profile.shows.forEach(function(show) { %>
+<div class="row">
+  <div class="col s8 offset-s2 infoBox">
+  <a href="../shows"><strong><p class="flow-text"><%= show.title %></p></strong></a>
+  </div>
+</div>
+<% }); %>
+
+
+<h5 class="profile-heading">Reviews</h5>
+<% profile.reviews.forEach(function(review) { %>
+<div class="row">
+  <div class="col s8 offset-s2 infoBox">
+    <p class="flow-text"><a href="../reviews/<%=review.showId%>"> <%= review.show.title %></a></p>
+    <p><strong>Title:</strong> <%= review.title %></p>
+    <p><strong>Review:</strong> <%= review.body %></p>
+  </div>
+</div>
+<% }); %>
+
+<h5 class="profile-heading">Ride Shares</h5>
+<% profile.rides.forEach(function(ride) { %>
+<div class="row">
+  <div class="col s8 offset-s2 infoBox">
+    <p class="flow-text"><a href="../rides/<%= ride.showId%>"> <%= ride.show.title %></a></p>
+    <p>Room for: <%= ride.passengers %></p>
+    <p><%= ride.description %></p>
+  </div>
+</div>
+<% }); %>
+</div>

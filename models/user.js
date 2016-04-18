@@ -1,6 +1,7 @@
 'use strict';
 
 var bcrypt = require('bcrypt');
+var validator = require('email-validator');
 
 module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define('user', {
@@ -21,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         models.user.hasMany(models.review);
         models.user.hasMany(models.ride);
       },
-authenticate: function(email, password, callback) {
+      authenticate: function(email, password, callback) {
         this.find( {
           where: {email:email}
         }).then(function(user) {
@@ -37,7 +38,7 @@ authenticate: function(email, password, callback) {
       beforeCreate: function(user, options, callback) {
         if (user.password) {
           bcrypt.hash(user.password, 10, function(err, hash) {
-            if (err) return callback(err);
+            if (err) return callback("Sorry, you're account could not be created. Please double check your information and try again.");
             user.password = hash;
             callback(null, user);
           });
