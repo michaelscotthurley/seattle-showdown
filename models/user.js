@@ -1,7 +1,6 @@
 'use strict';
 
 var bcrypt = require('bcrypt');
-var validator = require('email-validator');
 
 module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define('user', {
