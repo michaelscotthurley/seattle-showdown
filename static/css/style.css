@@ -89,6 +89,10 @@ header {
 	text-align: center;
 }
 
+.auth-buttons {
+   text-align: center;
+}
+
 .front-search {
    margin-top: 3em;
    border: groove;
